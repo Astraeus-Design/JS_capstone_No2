@@ -1,0 +1,18 @@
+html{
+    
+    /*  font-size: calc((100vw/320)*4);*/ /* experiment to create formula for */
+      /*font-size: calc((100vh/320)*4);*/ /* smooth font scaling with page size */
+  
+      font-size: 0.55rem;
+      min-height:100vh;
+      background-image: url("../images/f1carV2.png");
+      background-color: gray;
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+  }
+
+#contact_divs_container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}

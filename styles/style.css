@@ -1,0 +1,187 @@
+/* styles for global, html and body  */
+*{
+  box-sizing: border-box;
+  margin:0;
+  padding:0;
+/*  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;*/
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+body {
+  min-height: 100vh;
+  max-width: 1300px;
+  /*background-image: linear-gradient(to right, #090979, #00d4ff);*/
+
+}
+
+
+/* styles for main page menu div's */
+
+.main_page_container{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 5rem 0 0 0;
+  height:100%;
+  
+}
+
+.maintitle{
+  width:70%;
+  max-width:900px;
+  font-size: 2rem;
+  font-weight: bold;
+  background-color: #e9c9e4;
+  padding:1rem;
+  /*border: 1px solid white;*/
+  border-radius:10px;
+  text-align: center;
+  margin:3rem auto 1.5rem auto;
+  opacity:90%;
+  box-shadow: inset 0px 0px 26px -4px rgba(0,0,0,0.58);
+}
+
+
+.newItem{
+  width:45%;
+  max-width:900px;
+ /* max-height:500px;
+  overflow:auto;*/
+  font-weight: bold;
+  background-color: gainsboro;
+  padding:1rem;
+  border: 1px solid white;
+  border-radius:10px;
+  text-align: center;
+  margin: 15px auto;
+  box-shadow: inset 0px 0px 26px -4px rgba(0,0,0,0.58);    
+  opacity:90%;
+  /*display:none; */ 
+  /*max-height: 50vh;*/ 
+}
+
+/* grid set up for main form ( changes with media query at 1000px upward ) */
+
+#newContact{
+  display:grid;
+  gap:5px;
+  width:100%;
+  max-width:900px;
+  grid-template-areas: "a b"
+                       "c d"
+                       "e e";
+}
+
+#newinput>input{
+  width:100%;
+}
+
+
+#l7{
+  grid-area: a;
+  font-size: 2rem;;
+}
+
+#f7{
+  grid-area: b;
+}
+
+#l8{
+  grid-area: c;
+  font-size: 2rem;
+}
+
+#f8{
+  grid-area: d;
+}
+
+#fbtn1{
+  grid-area: e;
+}
+
+#season{
+  min-width:20rem;
+}
+
+#round{
+  min-width:20rem;  
+}
+
+/*  styles for the Return and Save buttons of contact edit screen */
+
+#fbtn1{
+  
+  font-size:2rem;
+  text-align: center;
+ /* background-color:#e4feeb;*/
+  /*border: 1px solid black;*/
+  border-radius: 5px;
+  margin-top: 5px;
+  margin-right: 5px;
+  padding:0.5rem;
+  opacity:90%;
+  box-shadow: inset 0px 0px 26px -4px rgba(0,0,0,0.58);
+}
+
+
+
+.dateEvent{
+  background-color: white;
+  border: 1px solid lightgray;
+  display: inline-block;
+  max-width: 400px;
+  border-radius: 15px;
+  min-height: 650px;
+  margin: 25px;
+  box-shadow: 5px 10px 18px black;
+  transition: 0.15s ease-in-out;
+  padding: 10px 0px;
+}
+
+.movieCard:hover {
+  transform: scale(1.02);
+  box-shadow: 5px 10px 18px blue;
+}
+
+img {
+  width: 350px;
+  padding: 25px;
+  border-radius: 3rem;
+  /* opacity: 0.9; */
+}
+
+.dateData{
+  padding: 0px 25px;
+  max-width: 350px;
+}
+
+p {
+  padding: 2px 0px;
+}
+
+i {
+  font-size: 1.5rem;
+  margin-top: 15px;
+  margin-right: 20px;
+  color: lightgray;
+  border: 1px solid lightgray;
+  border-radius: 50%;
+  padding: 10px;
+  transition: 0.15s ease-in-out;
+}
+
+i:hover {
+  transform: scale(1.02);
+  box-shadow: 5px 10px 18px #888888;
+  color: blue;
+}
+
+.commented {
+  color: red;
+}
+
+.likeHeart {
+  color: red;
+}

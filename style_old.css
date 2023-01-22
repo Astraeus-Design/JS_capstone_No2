@@ -1,0 +1,414 @@
+/******************************************************************************/
+/*                                                                            */
+/*         Styles for JS Capstone:12/01/23- Author M.Foster                   */
+/*                                                                            */
+/******************************************************************************/
+
+/* styles for global, html and body  */
+*{
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+html{
+    
+  /*  font-size: calc((100vw/320)*4);*/ /* experiment to create formula for */
+    /*font-size: calc((100vh/320)*4);*/ /* smooth font scaling with page size */
+
+    font-size: 0.55rem;
+    min-height:100vh;
+    background-image: url("../images/coffee-cup-laptop-eyeglasses-spiral-notepad-leaves-white-desk_23-2148178627.webp");
+    background-color: gray;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+body{
+   /* height: 100%;*/
+    display:flex;
+    flex-direction:column;
+    justify-content: space-between;
+}
+
+/* styles for main page menu div's */
+
+.main_page_container{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 5rem 0 0 0;
+    height:100%;
+    
+}
+
+.maintitle{
+    width:70%;
+    max-width:900px;
+    font-size: larger;
+    font-weight: bold;
+    background-color: #e9c9e4;
+    padding:1rem;
+    /*border: 1px solid white;*/
+    border-radius:10px;
+    text-align: center;
+    margin:3rem auto 1.5rem auto;
+    opacity:90%;
+    box-shadow: inset 0px 0px 26px -4px rgba(0,0,0,0.58);
+}
+
+.maintitle:hover{
+    box-shadow: inset 0px 0px 26px -4px rgba(0,0,0,0.95); 
+    
+}
+
+.subheaders{
+    width:70%;
+    max-width: 750px;
+    font-weight: bold;
+    background-color: #e9c9e4;
+    padding:1rem;
+    /*border: 1px solid white;*/
+    border-radius:10px;
+    text-align: center;
+    margin: 0.5rem auto;
+    box-shadow: inset 0px 0px 26px -4px rgba(0,0,0,0.58);
+    opacity:90%;
+}
+
+.subheaders:hover{
+    box-shadow: inset 0px 0px 26px -4px rgba(0,0,0,0.95); 
+     
+}
+
+/* styles for outer containers of new contact page, generally widths and max-heghts */
+
+.new_contact_container{
+    display:none;
+}
+
+.view_contacts_container{
+
+    display:none;
+    max-height: 25%;/*70vh;*/
+    overflow:auto;
+}
+
+.contact_divs_container{
+    max-height:350px;
+    
+    overflow:auto;
+}
+
+.newItem{
+    width:70%;
+    max-width:900px;
+   /* max-height:500px;
+    overflow:auto;*/
+    font-weight: bold;
+    background-color: gainsboro;
+    padding:1rem;
+    border: 1px solid white;
+    border-radius:10px;
+    text-align: center;
+    margin: 15px auto;
+    box-shadow: inset 0px 0px 26px -4px rgba(0,0,0,0.58);    
+    opacity:90%;
+    /*display:none; */ 
+    /*max-height: 50vh;*/ 
+}
+
+/* styles for contact divs of contact page, the JS generated divs */
+
+.contactDiv, .deleteDiv{
+    width:60%;
+    max-width: 750px;
+    height:2.5rem;
+    font-size:1.5rem;
+    background-color: #e4feeb;
+    /*border: 1px solid black;*/
+    border-radius: 5px;
+    width:55%;
+    text-align: center;
+    vertical-align: middle;
+    margin: 0.25rem auto;
+    padding:0.25rem;
+    box-shadow: inset 0px 0px 26px -4px rgba(0,0,0,0.58);
+    opacity:90%;
+}
+
+.contactDiv:hover{
+    box-shadow: inset 0px 0px 26px -4px rgba(0,0,0,0.95); 
+}
+
+/* styles for view/delete bar of contacts screen */
+
+.deleteDiv{
+    width:70%;
+    max-width: 900px;
+    background-color: gainsboro;
+    margin-top: 15px;
+    margin-bottom:10px;
+    width:70%; /*overide previous width */
+    opacity:90%;
+}
+
+.deleteDiv:hover{
+    box-shadow: inset 0px 0px 26px -4px rgba(0,0,0,0.95); 
+
+}
+
+.deleteToggle{
+    background-color: rgb(245, 115, 158);
+}
+
+/* grid set up for main form ( changes with media query at 1000px upward ) */
+
+#newContact{
+    display:grid;
+    gap:5px;
+    width:100%;
+    max-width:900px;
+    grid-template-areas: "a b b b"
+                        "c d d d"
+                        "e f f f"
+                        "g h h h"
+                        "i j j j"
+                        "k l l l"
+                        "m n n n"
+                        "o p p p"
+                        "q q r r";
+}
+
+#newinput>input{
+    width:100%;
+}
+
+#l1{
+    grid-area: a;
+}
+
+#f1{
+    grid-area: b;
+}
+
+#l2{
+    grid-area: c;
+}
+
+#f2{
+    grid-area: d;
+}
+
+#l3{
+    grid-area: e;
+}
+
+#f3{
+    grid-area: f;
+}
+
+#l4{
+    grid-area: g;
+}
+
+#f4{
+    grid-area: h;
+}
+
+#l5{
+    grid-area: i;
+}
+
+#f5{
+    grid-area: j;
+}
+
+#l6{
+    grid-area: k;
+}
+
+#f6{
+    grid-area: l;
+}
+
+#l7{
+    grid-area: m;
+}
+
+#f7{
+    grid-area: n;
+}
+
+#l8{
+    grid-area: o;
+}
+
+#f8{
+    grid-area: p;
+}
+
+/*  styles for the Return and Save buttons of contact edit screen */
+
+#fbtn1{
+    font-size:larger;
+    grid-area: q;
+    text-align: center;
+    background-color:#e4feeb;
+    /*border: 1px solid black;*/
+    border-radius: 5px;
+    margin-top: 5px;
+    margin-right: 5px;
+    padding:0.5rem;
+    opacity:90%;
+    box-shadow: inset 0px 0px 26px -4px rgba(0,0,0,0.58);
+}
+
+#fbtn2{
+    font-size: larger;
+    grid-area: r;
+    text-align: center;
+    background-color:#e9c9e4;
+    /*border: 1px solid black;*/
+    border-radius: 5px;
+    margin-top:5px;
+    margin-left: 5px;
+    padding:0.5rem;
+    opacity:90%;
+    box-shadow: inset 0px 0px 26px -4px rgba(0,0,0,0.58);
+}
+
+#fbtn1:hover,#fbtn2:hover{
+    box-shadow: inset 0px 0px 26px -4px rgba(0,0,0,0.95);
+}
+
+/* style used for form fields */
+
+input{
+    font-size: 1rem;
+    width:15rem;
+    padding:0.5rem;
+    /*border: 1px solid black;*/
+    border-radius:5px;
+    margin: 0 0 3px 1rem;
+    background-color: rgb(236, 230, 230);
+    box-shadow: inset 0px 0px 26px -4px rgba(0,0,0,0.58);
+    opacity:90%;
+
+}
+
+label{
+    padding: 0.5rem 0;
+    margin: 0.5rem 0;
+    font-size: 1.2rem;
+}
+
+form>div{
+    text-align: center;
+    display:flex;
+    justify-content: center;
+}
+
+
+/* general styles for hiding or showing divs */
+
+.hide_page1{
+    display:none;
+ }
+ 
+.show_page1{
+     display:block;
+ }
+
+.hide_page2{
+    display:none;
+ }
+ 
+.show_page2{
+     display:block;
+ }
+
+ 
+.hide_page3{
+    display:none;
+ }
+ 
+.show_page3{
+     display:block;
+ }
+
+.hideMainMenu{
+   display:none;
+}
+
+.showItemdiv{
+    display:block;
+}
+
+
+
+
+
+/* test of variable font media queries */
+
+@media screen and (max-width:230px){     /* very small device!! */
+
+    html{
+        font-size: 0.3rem;
+        
+    }
+
+    input{
+        width:10rem;
+    }
+}
+@media screen and (max-width:391px){  /* mobile up to small smartphone */
+
+    html{
+        font-size: 0.4rem;
+    }
+}
+
+@media screen and (min-width:392px){ /* medium smartphone */
+
+    html{
+        font-size: 0.6rem;
+    }
+}
+
+
+@media screen and (min-width: 590px){  /* small tablet */
+
+    html{
+        font-size: 0.8rem;
+    }
+}
+
+/*
+@media screen and (min-width: 900px){
+
+    html{
+        font-size: 1rem;
+    }
+
+}
+*/
+
+@media screen and (min-width: 1000px){   /* medium tablet to full PC */
+    
+    html{
+        font-size:1rem;
+
+    }
+
+    #newContact{
+
+        grid-template-areas: "a b i j"
+                             "c d k l"
+                             "e f m n"
+                             "g h o p"
+                             "q q r r";
+    }
+}

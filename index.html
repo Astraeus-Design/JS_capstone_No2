@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./styles/styles.css">
+</head>
+<body>
+  
+    <div class="maintitle" id="maintitle"><h1 id="titleHdr">Formula One Race Database</h1></div>
+
+    <!--  div for main screen menu items -->
+
+    <div class="main_page_container" id="main_page_container">
+
+
+    </div>
+
+    <!-- div to contain form for new contact entry -->
+
+    <div class="new_contact_container" id="new_contact_container">
+
+        <div class="newItem" id="newItemDiv">
+            <form id="newContact" action="">
+              <div id="l7">
+                <label for="season">Select Season</label>
+              </div>   
+              <div id="f7">
+                <select name="season" id="season">
+
+
+                </select>
+            
+              </div>
+              <div id="l8">
+                <label for="round">Select Round</label>
+              </div>   
+              <div id="f8">
+                <select name="round" id="round">
+                  <option value="all">All</option>
+                  <option value="race1">france</option>
+                </select>
+                
+              </div>
+              <div id="fbtn1">
+                
+                <button type="button" id="bt1">View The Results</button>
+              </div>
+        <!--     <div id="fbtn2">
+                <h2 id="btn2h2">Save</h2>-->
+                <!-- <button type="button" id="bt2">Save</button> 
+              </div> -->
+
+    
+           </form>
+             
+                        
+          </div>        
+
+    </div>
+
+    <!--  div to contain view of contacts book  -->
+    
+    <div class="view_contacts_container" id="view_contacts_container">
+      <div class="contact_divs_container" id="contact_divs_container">
+         
+        <!--  populated by dynamic content on this day  -->
+      
+      </div>
+
+        
+      <div class="deleteDiv" id="deleteDiv"><h3 id="deleteHeader"></h3></div>  
+     
+    </div>
+
+
+    <script src="./jscript/main.js"></script>
+</body>
+</html>
