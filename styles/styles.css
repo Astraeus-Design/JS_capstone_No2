@@ -10,9 +10,3 @@ html{
       background-repeat: no-repeat;
       background-size: 100% 100%;
   }
-
-#contact_divs_container{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-}

@@ -19,6 +19,7 @@ const nationalities =  [{ NationalityID: 1, CountryCode: 'GB', Nationality: 'Bri
             { NationalityID: 41, CountryCode: 'AT', Nationality: 'Austrian' },
             { NationalityID: 42, CountryCode: 'AZ', Nationality: 'Azerbaijani' },
             { NationalityID: 2, CountryCode: 'AR', Nationality: 'Argentinian' },
+            { NationalityID: 2, CountryCode: 'AR', Nationality: 'Argentine' },            
             { NationalityID: 3, CountryCode: 'AU', Nationality: 'Australian' },
             { NationalityID: 43, CountryCode: 'BH', Nationality: 'Bahraini' },
             { NationalityID: 44, CountryCode: 'BD', Nationality: 'Bangladeshi' },
@@ -472,17 +473,17 @@ function getIconRef(searchStr,ctryflag){
     countryObj='';
     if (!ctryflag){
         countryObj = nationalities.find((element)=>(element.Nationality).toLowerCase()===(searchStr.toLowerCase()));
-        if (countryObj!=='') ccode=countryObj.CountryCode;
+        if (countryObj!==undefined) ccode=countryObj.CountryCode;
     }
     else
     {
       console.log(countriesArray[147].code);
       countryObj = countriesArray.find((element)=>(element.name).toLowerCase()===((searchStr).toLowerCase()));
       console.log(countryObj);
-      if (countryObj!=='') ccode=countryObj.code;
+      if (countryObj!==undefined) ccode=countryObj.code;
     }
     console.log(countryObj);
-    if (countryObj!=='') return(ccode+'.png');
+    if (countryObj!==undefined) return(ccode+'.png');
     else return('---');
 
 
@@ -633,7 +634,7 @@ function displayEvents(){
         d1=`<div class="hdr"><div class="hdrtitle"><h3 class="hdrh3">`+
           `Round ${index+1}:  ${ctry} - ${element.date}</h3></div>`;
 
-        d2=`<div class="hdrIcon"><img class="hdrimg" src="${(fname!=='---')?(path+fname):'---'}"/>`+
+        d2=`<div class="hdrIcon"><img class="hdrimg" alt='---' src="${(fname!=='---')?(path+fname):''}"/>`+
            `</div>`;
 
 /*        d3=`<div class="hdrPlace"><a class="hdrlink" target="_blank" href="${cUrl}">${cName}</a></div></div>`;*/
@@ -649,15 +650,17 @@ function displayEvents(){
 
         for( j=0; j<3;j++){
             
-            resultsArray=resultsObj.MRData.RaceTable.Races[j].Results[j];
+            resultsArray=resultsObj.MRData.RaceTable.Races[index].Results[j];
             driverData=resultsArray.Driver;
             driverUrl=driverData.url;
-            driverName=driverData.familyName+` `+driverData.givenName;
+            driverName=driverData.givenName+' '+driverData.familyName;
             driverCtry=driverData.nationality;
             teamData=resultsArray.Constructor;
             driverTeam=teamData.constructorId;
             teamCtry=teamData.nationality;
             teamUrl=teamData.url;
+
+            console.log(driverName,driverTeam);
 
             idObj={id:driverName,url:driverUrl};
             linksArray.push(idObj);
@@ -672,11 +675,11 @@ function displayEvents(){
             /* build html structure for each div */
 
             firstdiv=`<div class="resultBody">`;
-            seconddiv=`<div class="divtitle">1st</div>`;
-            thirddiv=`<div class="flagdiv1"><img src="${(flag1!=='---')?(path+flag1):'---'}"/></div>`;
+            seconddiv=`<div class="divtitle" id="A${j}">${(j==0)?'1st':(j==1)?'2nd':'3rd'}</div>`;
+            thirddiv=`<div class="flagdiv1"><img class="flag" alt='---' src="${(flag1!=='---')?(path+flag1):''}"/></div>`;
             fourthdiv=`<div class="driverdiv">${driverName}</div>`;            
 /*            fourthdiv=`<div class="driverdiv"><a href="${driverUrl} target="_blank">${driverName}</a></div>`;*/
-            fifthdiv=`<div class="flagdiv2"><img src="${(flag2!=='---')?(path+flag2):'---'}"/></div>`;
+            fifthdiv=`<div class="flagdiv2"><img class="flag" alt='---' src="${(flag2!=='---')?(path+flag2):''}"/></div>`;
             sixthdiv=`<div class="teamdiv">${driverTeam}</div></div>`;
 /*            sixthdiv=`<div class="teamdiv"><a href="${teamUrl} target="_blank">${driverTeam}</a></div></div>`;*/
 
@@ -704,36 +707,7 @@ function displayEvents(){
 
    displayDiv.innerHTML=htmlMaindiv;
 
-  /*
-  date=formRef.elements['season'].value;
-  console.log(date);
-
-  if (date!=''){
-
-    date=formRef.elements['season'].value;
-    console.log(date);*/
-
-    /* do a call to get events data */
-/*
-  fetch(zenURL+`04/02`)
-  .then((res) => res.json())
-  .then((data) => {
-     console.log(data);
-  }
-
-  );
-*//*
-fetch(`http://ergast.com/api/f1/2008/5/results.json`)
-.then((res) => res.json())
-.then((data) => {
-   console.log(data);
-   let f1obj=data;
-}
-
-).catch((err)=>alert("error in results fetch"));
-
- };*/
-
+  
 
 
 
@@ -778,6 +752,38 @@ seasonRef.addEventListener('change',cacheSeasonData);
 /* visibility by virtue of select options                   */
 
 buttonRef.addEventListener('click',displayEvents);
+
+/* add event listener to catch click events for linked data  */
+
+displayDiv.addEventListener('click',(e)=>{
+      let refObj;
+      let textStr=e.target.innerText;
+      console.log('in div click ',textStr);
+      found=false;
+
+      /* code rewritten after issues with array.find, manual */
+      /* tests showed all values valid and correct so code */
+      /* now written as a loop */
+
+      for( p=0 ; ((p<linksArray.length)&&!found); p++){
+        if((linksArray[p].id)===textStr){ refObj=linksArray[p];found=true;};
+      }
+
+
+   /*   refObj=linksArray.find((element)=>{((element.id)===(textStr));
+       console.log(refObj,textStr);});*/
+    /*  console.log(refObj.id,textStr);*/
+   /* refObj=linksArray[0];
+    if (refObj.id===textStr) console.log("it is correct");*/
+
+    /* if a match for link found open in new window */
+    
+      if(refObj!==undefined){
+        window.open(refObj.url,refObj.id);
+        
+      }
+      else(console.log('no matches',linksArray));
+});
 
 
 
