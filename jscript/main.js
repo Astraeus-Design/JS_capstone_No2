@@ -438,6 +438,7 @@ const countriesArray = [
 const zenURL=`https://today.zenquotes.io/api/`;
 
 const buttonRef=document.querySelector("#bt1");
+const buttonDivRef=document.querySelector("#fbtn1");
 const formRef=document.querySelector("#newContact");
 const seasonRef=document.querySelector("#season");
 const roundRef=document.querySelector("#round");
@@ -462,6 +463,8 @@ let resultsObj;
 let seasonsObj;
 let linksArray=[];
 let htmlArray=[];
+let noofDivs;
+
 
 /* function to return country code via lookup for nationality/country  */
 /* used for generation of flag icons                           */
@@ -690,9 +693,12 @@ function displayEvents(){
         /* consolidate all html sections into main container*/
 
 
-        headerhtml=`<div class="hdr_container">`+d1+d2+d3+`</div>`;        
+     /*   headerhtml=`<div class="hdr_container">`+d1+d2+d3+`</div>`;  */      
         bodyhtml=`<div class="results_container">`+htmlArray[0]+htmlArray[1]+htmlArray[2]+'</div>';
-        htmlMaindiv+=(headerhtml+bodyhtml);
+        /*htmlMaindiv=`<div id="A${index}">`+(headerhtml+bodyhtml)+`</div>`;*/
+        htmlMaindiv+=`<div class="hdr_container" id="A${index}">`+d1+d2+d3+(/*headerhtml+*/bodyhtml)+`</div>`;
+     /*   htmlMaindiv+=(`<div class="roundDiv" id="A${index}">`+(headerhtml+bodyhtml)+`</div>`);*/
+        noofDivs=index+1;
 
  /*        htmlHeader=`<div id="hdr"><div id="hdrtitle"><h3 id="hdrh3">`+
                 `Round ${index+1}:  ${element.Circuit.Location.country}`+
@@ -751,7 +757,7 @@ seasonRef.addEventListener('change',cacheSeasonData);
 /* be listener that creates dynamic html and determines data */
 /* visibility by virtue of select options                   */
 
-buttonRef.addEventListener('click',displayEvents);
+buttonDivRef.addEventListener('click',displayEvents);
 
 /* add event listener to catch click events for linked data  */
 
@@ -777,7 +783,7 @@ displayDiv.addEventListener('click',(e)=>{
     if (refObj.id===textStr) console.log("it is correct");*/
 
     /* if a match for link found open in new window */
-    
+
       if(refObj!==undefined){
         window.open(refObj.url,refObj.id);
         
@@ -790,109 +796,5 @@ displayDiv.addEventListener('click',(e)=>{
 
 
 
-/*
-fetch(`https://imdb-api.com/en/API/Top250Movies/${apiKey}`)
-  .then((res) => res.json())
-  .then((data) => {
-    // console.log(data);
 
-    if (!localStorage.getItem("Events")) {
-      funcLocalData(data.items);
-    }
-    funcCreateCards();
-  });*/
 
-// Local copy of the data
-funcLocalData = (events) => {
-  let eventsData = [];
-
-  events.map((ev) => {
-    eventsData.push({
-      /*id: m.id,
-      image: m.image,
-      title: m.title,
-      year: m.year,
-      imDbRating: m.imDbRating,
-      likes: 0,
-      comments: "",*/
-    });
-  });
-
-  // console.log(movieData);
-  localStorage.setItem("Events", JSON.stringify(eventsData));
-};
-// prettier-ignore
-funcCreateCards = () => {
-  let tempEventsData = JSON.parse(localStorage.getItem('Events'))
-  let tempCardData = '';
-  tempEventsData.map((eventObj) => {
-    tempCardData += `<div class="dateDiv">
-    <img
-      src="${eventObj.image}"
-      alt="${eventObj.title}"
-    />
-    <div class="dateEvent">
-      <h2>${eventObj.title}</h2>
-      <p>${eventObj.year}</p>
-      <p>IMDB Rating: <span>${eventObj.imDbRating}</span></p>
-      ${eventObj.comments ? `<p><span style="font-weight: bold">Comment: </span>${eventObj.comments}</p>` : ''}
-      <div class="movieCardSocial">
-        <a href="#" onClick="funcLike('${eventObj.id}')"><i class="fas fa-heart ${eventObj.likes ? 'likeHeart' : ''}"></i></a>
-        <a href="https://www.imdb.com/title/${eventObj.id}/" target="_blank"><i class="fas fa-share-alt"></i></a>
-        <a href="#" onClick="funcComment('${eventObj.id}')"><i class="fas fa-comment ${eventObj.comments ? 'commented' : ''}"></i></a>
-      </div>
-    </div>
-  </div>`;
-  });
-
-  // console.log(tempCardData);
-  /*document.querySelector('#contact_divs_container').innerHTML = tempCardData;*/
-};
-
-// Likes Clicked
-funcLike = (i) => {
-  // console.log(i);
-
-  let movieData = JSON.parse(localStorage.getItem("MovieDataStored"));
-
-  movieData = movieData.map((m) => {
-    if (m.id === i) {
-      m.likes += 1;
-    }
-    return m;
-  });
-
-  // console.log(movieData);
-
-  movieData.sort(function (a, b) {
-    return b.likes - a.likes;
-  });
-
-  localStorage.setItem("MovieDataStored", JSON.stringify(movieData));
-
-  funcCreateCards();
-};
-
-// Submit A Comment
-funcComment = (i) => {
-  // console.log('comment', i);
-
-  let movieData = JSON.parse(localStorage.getItem("MovieDataStored"));
-
-  let tempComment = prompt("Please submit your comment");
-
-  // console.log(tempComment);
-
-  movieData = movieData.map((m) => {
-    if (m.id === i) {
-      m.comments = tempComment;
-    }
-    return m;
-  });
-
-  // console.log(movieData);
-
-  localStorage.setItem("MovieDataStored", JSON.stringify(movieData));
-
-  funcCreateCards();
-};
