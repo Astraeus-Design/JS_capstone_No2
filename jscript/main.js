@@ -171,6 +171,263 @@ const nationalities =  [{ NationalityID: 1, CountryCode: 'GB', Nationality: 'Bri
 ];
 
 
+// All countries
+// length 252
+
+const countriesArray = [
+  {name: "Afghanistan",code: "AF"},
+  {name: "Åland Islands",code: "AX"},
+  {name: "Albania",code: "AL"},
+  {name: "Algeria",code: "DZ"},
+  {name: "American Samoa",code: "AS"},
+  {name: "Andorra",code: "AD"},
+  {name: "Angola",code: "AO"},
+  {name: "Anguilla",code: "AI"},
+  {name: "Antarctica",code: "AQ"},
+  {name: "Antigua & Barbuda",code: "AG"},
+  {name: "Argentina",code: "AR"},
+  {name: "Armenia",code: "AM"},
+  {name: "Aruba",code: "AW"},
+  {name: "Australia",code: "AU"},
+  {name: "Austria",code: "AT"},
+  {name: "Azerbaijan",code: "AZ"},
+  {name: "Bahamas",code: "BS"},
+  {name: "Bahrain",code: "BH"},
+  {name: "Bangladesh",code: "BD"},
+  {name: "Barbados",code: "BB"},
+  {name: "Belarus",code: "BY"},
+  {name: "Belgium",code: "BE"},
+  {name: "Belize",code: "BZ"},
+  {name: "Benin",code: "BJ"},
+  {name: "Bermuda",code: "BM"},
+  {name: "Bhutan",code: "BT"},
+  {name: "Bolivia",code: "BO"},
+  {name: "Caribbean Netherlands",code: "BQ"},
+  {name: "Bosnia & Herzegovina",code: "BA"},
+  {name: "Botswana",code: "BW"},
+  {name: "Bouvet Island",code: "BV"},
+  {name: "Brazil",code: "BR"},
+  {name: "British Indian Ocean Territory",code: "IO"},
+  {name: "Brunei",code: "BN"},
+  {name: "Bulgaria",code: "BG"},
+  {name: "Burkina Faso",code: "BF"},
+  {name: "Burundi",code: "BI"},
+  {name: "Cambodia",code: "KH"},
+  {name: "Cameroon",code: "CM"},
+  {name: "Canada",code: "CA"},
+  {name: "Cape Verde",code: "CV"},
+  {name: "Cayman Islands",code: "KY"},
+  {name: "Central African Republic",code: "CF"},
+  {name: "Chad",code: "TD"},
+  {name: "Chile",code: "CL"},
+  {name: "China",code: "CN"},
+  {name: "Christmas Island",code: "CX"},
+  {name: "Cocos (Keeling) Islands",code: "CC"},
+  {name: "Colombia",code: "CO"},
+  {name: "Comoros",code: "KM"},
+  {name: "Congo - Brazzaville",code: "CG"},
+  {name: "Congo - Kinshasa",code: "CD"},
+  {name: "Cook Islands",code: "CK"},
+  {name: "Costa Rica",code: "CR"},
+  {name: "Côte d’Ivoire",code: "CI"},
+  {name: "Croatia",code: "HR"},
+  {name: "Cuba",code: "CU"},
+  {name: "Curaçao",code: "CW"},
+  {name: "Cyprus",code: "CY"},
+  {name: "Czechia",code: "CZ"},
+  {name: "Denmark",code: "DK"},
+  {name: "Djibouti",code: "DJ"},
+  {name: "Dominica",code: "DM"},
+  {name: "Dominican Republic",code: "DO"},
+  {name: "Ecuador",code: "EC"},
+  {name: "Egypt",code: "EG"},
+  {name: "El Salvador",code: "SV"},
+  {name: "Equatorial Guinea",code: "GQ"},
+  {name: "Eritrea",code: "ER"},
+  {name: "Estonia",code: "EE"},
+  {name: "Ethiopia",code: "ET"},
+  {name: "Falkland Islands (Islas Malvinas)",code: "FK"},
+  {name: "Faroe Islands",code: "FO"},
+  {name: "Fiji",code: "FJ"},
+  {name: "Finland",code: "FI"},
+  {name: "France",code: "FR"},
+  {name: "French Guiana",code: "GF"},
+  {name: "French Polynesia",code: "PF"},
+  {name: "French Southern Territories",code: "TF"},
+  {name: "Gabon",code: "GA"},
+  {name: "Gambia",code: "GM"},
+  {name: "Georgia",code: "GE"},
+  {name: "Germany",code: "DE"},
+  {name: "Ghana",code: "GH"},
+  {name: "Gibraltar",code: "GI"},
+  {name: "Greece",code: "GR"},
+  {name: "Greenland",code: "GL"},
+  {name: "Grenada",code: "GD"},
+  {name: "Guadeloupe",code: "GP"},
+  {name: "Guam",code: "GU"},
+  {name: "Guatemala",code: "GT"},
+  {name: "Guernsey",code: "GG"},
+  {name: "Guinea",code: "GN"},
+  {name: "Guinea-Bissau",code: "GW"},
+  {name: "Guyana",code: "GY"},
+  {name: "Haiti",code: "HT"},
+  {name: "Heard & McDonald Islands",code: "HM"},
+  {name: "Vatican City",code: "VA"},
+  {name: "Honduras",code: "HN"},
+  {name: "Hong Kong",code: "HK"},
+  {name: "Hungary",code: "HU"},
+  {name: "Iceland",code: "IS"},
+  {name: "India",code: "IN"},
+  {name: "Indonesia",code: "ID"},
+  {name: "Iran",code: "IR"},
+  {name: "Iraq",code: "IQ"},
+  {name: "Ireland",code: "IE"},
+  {name: "Isle of Man",code: "IM"},
+  {name: "Israel",code: "IL"},
+  {name: "Italy",code: "IT"},
+  {name: "Jamaica",code: "JM"},
+  {name: "Japan",code: "JP"},
+  {name: "Jersey",code: "JE"},
+  {name: "Jordan",code: "JO"},
+  {name: "Kazakhstan",code: "KZ"},
+  {name: "Kenya",code: "KE"},
+  {name: "Kiribati",code: "KI"},
+  {name: "North Korea",code: "KP"},
+  {name: "South Korea",code: "KR"},
+  {name: "Kosovo",code: "XK"},
+  {name: "Kuwait",code: "KW"},
+  {name: "Kyrgyzstan",code: "KG"},
+  {name: "Laos",code: "LA"},
+  {name: "Latvia",code: "LV"},
+  {name: "Lebanon",code: "LB"},
+  {name: "Lesotho",code: "LS"},
+  {name: "Liberia",code: "LR"},
+  {name: "Libya",code: "LY"},
+  {name: "Liechtenstein",code: "LI"},
+  {name: "Lithuania",code: "LT"},
+  {name: "Luxembourg",code: "LU"},
+  {name: "Macao",code: "MO"},
+  {name: "North Macedonia",code: "MK"},
+  {name: "Madagascar",code: "MG"},
+  {name: "Malawi",code: "MW"},
+  {name: "Malaysia",code: "MY"},
+  {name: "Maldives",code: "MV"},
+  {name: "Mali",code: "ML"},
+  {name: "Malta",code: "MT"},
+  {name: "Marshall Islands",code: "MH"},
+  {name: "Martinique",code: "MQ"},
+  {name: "Mauritania",code: "MR"},
+  {name: "Mauritius",code: "MU"},
+  {name: "Mayotte",code: "YT"},
+  {name: "Mexico",code: "MX"},
+  {name: "Micronesia",code: "FM"},
+  {name: "Moldova",code: "MD"},
+  {name: "Monaco",code: "MC"},
+  {name: "Mongolia",code: "MN"},
+  {name: "Montenegro",code: "ME"},
+  {name: "Montserrat",code: "MS"},
+  {name: "Morocco",code: "MA"},
+  {name: "Mozambique",code: "MZ"},
+  {name: "Myanmar (Burma)",code: "MM"},
+  {name: "Namibia",code: "NA"},
+  {name: "Nauru",code: "NR"},
+  {name: "Nepal",code: "NP"},
+  {name: "Netherlands",code: "NL"},
+  {name: "Curaçao",code: "AN"},
+  {name: "New Caledonia",code: "NC"},
+  {name: "New Zealand",code: "NZ"},
+  {name: "Nicaragua",code: "NI"},
+  {name: "Niger",code: "NE"},
+  {name: "Nigeria",code: "NG"},
+  {name: "Niue",code: "NU"},
+  {name: "Norfolk Island",code: "NF"},
+  {name: "Northern Mariana Islands",code: "MP"},
+  {name: "Norway",code: "NO"},
+  {name: "Oman",code: "OM"},
+  {name: "Pakistan",code: "PK"},
+  {name: "Palau",code: "PW"},
+  {name: "Palestine",code: "PS"},
+  {name: "Panama",code: "PA"},
+  {name: "Papua New Guinea",code: "PG"},
+  {name: "Paraguay",code: "PY"},
+  {name: "Peru",code: "PE"},
+  {name: "Philippines",code: "PH"},
+  {name: "Pitcairn Islands",code: "PN"},
+  {name: "Poland",code: "PL"},
+  {name: "Portugal",code: "PT"},
+  {name: "Puerto Rico",code: "PR"},
+  {name: "Qatar",code: "QA"},
+  {name: "Réunion",code: "RE"},
+  {name: "Romania",code: "RO"},
+  {name: "Russia",code: "RU"},
+  {name: "Rwanda",code: "RW"},
+  {name: "St. Barthélemy",code: "BL"},
+  {name: "St. Helena",code: "SH"},
+  {name: "St. Kitts & Nevis",code: "KN"},
+  {name: "St. Lucia",code: "LC"},
+  {name: "St. Martin",code: "MF"},
+  {name: "St. Pierre & Miquelon",code: "PM"},
+  {name: "St. Vincent & Grenadines",code: "VC"},
+  {name: "Samoa",code: "WS"},
+  {name: "San Marino",code: "SM"},
+  {name: "São Tomé & Príncipe",code: "ST"},
+  {name: "Saudi Arabia",code: "SA"},
+  {name: "Senegal",code: "SN"},
+  {name: "Serbia",code: "RS"},
+  {name: "Serbia",code: "CS"},
+  {name: "Seychelles",code: "SC"},
+  {name: "Sierra Leone",code: "SL"},
+  {name: "Singapore",code: "SG"},
+  {name: "Sint Maarten",code: "SX"},
+  {name: "Slovakia",code: "SK"},
+  {name: "Slovenia",code: "SI"},
+  {name: "Solomon Islands",code: "SB"},
+  {name: "Somalia",code: "SO"},
+  {name: "South Africa",code: "ZA"},
+  {name: "South Georgia & South Sandwich Islands",code: "GS"},
+  {name: "South Sudan",code: "SS"},
+  {name: "Spain",code: "ES"},
+  {name: "Sri Lanka",code: "LK"},
+  {name: "Sudan",code: "SD"},
+  {name: "Suriname",code: "SR"},
+  {name: "Svalbard & Jan Mayen",code: "SJ"},
+  {name: "Eswatini",code: "SZ"},
+  {name: "Sweden",code: "SE"},
+  {name: "Switzerland",code: "CH"},
+  {name: "Syria",code: "SY"},
+  {name: "Taiwan",code: "TW"},
+  {name: "Tajikistan",code: "TJ"},
+  {name: "Tanzania",code: "TZ"},
+  {name: "Thailand",code: "TH"},
+  {name: "Timor-Leste",code: "TL"},
+  {name: "Togo",code: "TG"},
+  {name: "Tokelau",code: "TK"},
+  {name: "Tonga",code: "TO"},
+  {name: "Trinidad & Tobago",code: "TT"},
+  {name: "Tunisia",code: "TN"},
+  {name: "Turkey",code: "TR"},
+  {name: "Turkmenistan",code: "TM"},
+  {name: "Turks & Caicos Islands",code: "TC"},
+  {name: "Tuvalu",code: "TV"},
+  {name: "Uganda",code: "UG"},
+  {name: "Ukraine",code: "UA"},
+  {name: "United Arab Emirates",code: "AE"},
+  {name: "United Kingdom",code: "GB"},
+  {name: "United States",code: "US"},
+  {name: "U.S. Outlying Islands",code: "UM"},
+  {name: "Uruguay",code: "UY"},
+  {name: "Uzbekistan",code: "UZ"},
+  {name: "Vanuatu",code: "VU"},
+  {name: "Venezuela",code: "VE"},
+  {name: "Vietnam",code: "VN"},
+  {name: "British Virgin Islands",code: "VG"},
+  {name: "U.S. Virgin Islands",code: "VI"},
+  {name: "Wallis & Futuna",code: "WF"},
+  {name: "Western Sahara",code: "EH"},
+  {name: "Yemen",code: "YE"},
+  {name: "Zambia",code: "ZM"},
+  {name: "Zimbabwe",code: "ZW"}
+];
 
 
 
@@ -183,17 +440,51 @@ const buttonRef=document.querySelector("#bt1");
 const formRef=document.querySelector("#newContact");
 const seasonRef=document.querySelector("#season");
 const roundRef=document.querySelector("#round");
+const displayDiv=document.querySelector("#contact_divs_container");
 
 let day;
 let month;
 let year;
 let date;
 let htmlSelect=``
+let htmlHeader=``;
+lethtmlResult=``;
+let htmlFirst=``;
+let htmlSecond=``;
+let htmlThird=``
 let filename='';
+let filename2='';
 let inTimeOut=false;
 let raceArray;
+let resultsObj;
+let seasonsObj;
 
 
+/* function to return country code via lookup for nationality/country  */
+/* used for generation of flag icons                           */
+
+function getIconRef(searchStr,ctryflag){
+  console.log(searchStr,ctryflag);
+    if(searchStr==='UK') searchStr='United Kingdom';
+    if(searchStr==='USA') searchStr='United States';
+    countryObj='';
+    if (!ctryflag){
+        countryObj = nationalities.find((element)=>(element.Nationality).toLowerCase()===searchStr);
+        if (countryObj!=='') ccode=countryObj.CountryCode;
+    }
+    else
+    {
+      console.log(countriesArray[147].code);
+      countryObj = countriesArray.find((element)=>(element.name).toLowerCase()===((searchStr).toLowerCase()));
+      console.log(countryObj);
+      if (countryObj!=='') ccode=countryObj.code;
+    }
+    console.log(countryObj);
+    if (countryObj!=='') return(ccode+'.png');
+    else return('---');
+
+
+};
 
 /* function to populate options of round select input */
 
@@ -202,10 +493,10 @@ function populateRounds(dataObj){
   
   raceArray=dataObj.MRData.RaceTable.Races;
   console.log(raceArray);
-  htmlSelect=``;
+  htmlSelect=`<option class="option" value="0">All</option>`;
   raceArray.forEach((raceRound,index)=>
               {console.log(raceRound.raceName,raceRound.Circuit.circuitName);
-               htmlSelect+=`<option class="option" value="${index}">${raceRound.raceName},${raceRound.Circuit.circuitName}</option>`; });
+               htmlSelect+=`<option class="option" value="${index+1}">${raceRound.raceName},${raceRound.Circuit.circuitName}</option>`; });
   roundRef.innerHTML=htmlSelect;
 
 
@@ -218,21 +509,26 @@ function cacheSeasonData(){
 
 console.log('in the change listener, season select');
 
- /* make a call to API requesting data to create initial fields for round select input and also cache recieved data */
+ /* make a call to API requesting data to create initial fields for round select input and also cache recieved data, also cache results data */
  
   filename=`S`+formRef.elements['season'].value;
+  filename2='R'+formRef.elements['season'].value;
 
   /* check for existence of data for chosen season */
 
-  if (localStorage.getItem(filename))
+  if (localStorage.getItem(filename)&&(localStorage.getItem(filename2)))
     {
       console.log(filename,' data is present and saved');
 
       /* data exists so load into memory and populate round select input */
 
-      tempObj=JSON.parse(localStorage.getItem(filename));
+      seasonsObj=JSON.parse(localStorage.getItem(filename));
 
-      populateRounds(tempObj);
+      populateRounds(seasonsObj);
+
+      /* load race results data ready for presentation */
+
+      resultsObj=JSON.parse(localStorage.getItem(filename));
 
     }
   else
@@ -262,6 +558,29 @@ console.log('in the change listener, season select');
 
    ).catch((err)=>{alert("failed season data request");
                   console.log(err)});
+
+    /*now fetch results data for selected season in similar way */
+    
+    
+    fetch(`https://ergast.com/api/f1/${formRef.elements['season'].value}/results.json?limit=550`)
+    .then((res) => res.json())
+    .then((resultsData) => {
+      console.log(resultsData);
+     if (!localStorage.getItem(filename2))
+       {
+       /* create new data in local storage as a cached item */
+
+       localStorage.setItem(filename2, JSON.stringify(resultsData));
+
+      };
+
+
+ 
+     }
+
+   ).catch((err)=>{alert("failed race results data request");
+                  console.log(err)});
+
   };
 
 
@@ -272,21 +591,76 @@ console.log('in the change listener, season select');
 
 
 
-/* function to display F1 driver and race data */
+/* function to display F1 driver and race data using dynamic html  */
+/* Rather than re-render individual div's, all divs will be generated */
+/* and allowed to be toggled visible dependent on select option  */ 
 
 function displayEvents(){
 
   console.log("button clicked");
 
-  /* if birthday valid parse and submit to web api */
+  /* structure shall consist of header style div with three */
+  /* divs sitting beneath in parallel, all will be children of */
+  /* a combination of flex-flex or grid-flex to provide options */
+  /* for responsive operation */
 
+  /* our resultsObj contains results data, seasonsObj rounds data */ 
+
+  /* create header div html we can concatenate smaller sections  */
+  /* for ease of modification */
+
+  raceArray=seasonsObj.MRData.RaceTable.Races;
+
+  htmlMaindiv=``;
+
+  raceArray.forEach((element,index)=>{
+
+         ctry=element.Circuit.Location.country;
+         cName=element.Circuit.circuitName;
+         cUrl=element.Circuit.url
+         fname=getIconRef(ctry,true);
+         path=`../images/png_files/w40/`;
+         /* create main header div block */
+         
+        d1=`<div class="hdr"><div class="hdrtitle"><h3 class="hdrh3">`+
+          `Round ${index+1}:  ${ctry} - ${element.date}</h3></div>`;
+
+        d2=`<div class="hdrIcon"><img class="hdrimg" src="${(fname!=='---')?(path+fname):'---'}"/>`+
+           `</div>`;
+
+        d3=`<div class="hdrPlace"><a class="hdrlink" target="_blank" href="${cUrl}">${cName}</a></div></div>`;
+
+        headerhtml=`<div class="hdr_container">`+d1+d2+d3+`</div>`;
+
+        /* now define 3 divs containing results and driver data */
+
+
+
+
+
+        htmlMaindiv+=headerhtml;
+
+ /*        htmlHeader=`<div id="hdr"><div id="hdrtitle"><h3 id="hdrh3">`+
+                `Round ${index+1}:  ${element.Circuit.Location.country}`+
+                ` - ${element.date}</h3></div><div id="hdrIcon"><img src="`+
+                `${(fname!=='---')?fname:'---'}"/></div><div id="hdrPlace">`+
+                `<a href="${element.Circuit.url}">`+
+                `${element.Circuit.circuitName}</a></div></div>`;*/
+
+                    console.log(element.Circuit.Location.country);
+  });
+
+
+   displayDiv.innerHTML=htmlMaindiv;
+
+  /*
   date=formRef.elements['season'].value;
   console.log(date);
 
   if (date!=''){
 
     date=formRef.elements['season'].value;
-    console.log(date);
+    console.log(date);*/
 
     /* do a call to get events data */
 /*
@@ -297,7 +671,7 @@ function displayEvents(){
   }
 
   );
-*/
+*//*
 fetch(`http://ergast.com/api/f1/2008/5/results.json`)
 .then((res) => res.json())
 .then((data) => {
@@ -307,7 +681,7 @@ fetch(`http://ergast.com/api/f1/2008/5/results.json`)
 
 ).catch((err)=>alert("error in results fetch"));
 
- };
+ };*/
 
 
 
@@ -315,27 +689,42 @@ fetch(`http://ergast.com/api/f1/2008/5/results.json`)
 };
 
 
-/*  populate the select input for years 1950-2022  */
+
+
+
+/******************************************************************/
+/*                                                                */
+/*              main code for initialisation and housekeeping     */
+/*                                                                */
+/******************************************************************/
+
+/*  populate the select input html for years 1950-2022  */
 
 for( let i=1950; i<2023; i++){
 
- htmlSelect+=`<option class="option" value="${i}">${i}</option>`; 
+  htmlSelect+=`<option class="option" value="${i}">${i}</option>`; 
+ 
+ };
+ 
+ document.querySelector("#season").innerHTML=htmlSelect;
+ 
+ 
 
-};
+/* cache data for long term use, required due to fair usage */
+/* policy of API provider( no more than 4 calls per second or 200 per hour) */
+/* As it is data would only require recaching for the active season every */
+/* 1,2,4 weeks and for current year only depending on race schedule */ 
+/* initialised at start for first select value, currently 1950 */
 
-document.querySelector("#season").innerHTML=htmlSelect;
-
-
-
-/* cache data for long term use */
-
-/*cacheSeasonData();*/
+cacheSeasonData();
 
 /* assign an event listener for season select input change */
 
 seasonRef.addEventListener('change',cacheSeasonData);
 
-/* assign listener to button for submission */
+/* assign listener to button for submission this will also */
+/* be listener that creates dynamic html and determines data */
+/* visibility by virtue of select options                   */
 
 buttonRef.addEventListener('click',displayEvents);
 
