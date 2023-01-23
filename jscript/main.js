@@ -554,6 +554,9 @@ console.log('in the change listener, season select');
       };
 
       populateRounds(seasonData);
+
+      seasonsObj=seasonData;
+
      /*raceArray=seasonData.MRData.RaceTable.Races;*/
      console.log(raceArray);
      console.log(raceArray[3].Circuit.circuitName);
@@ -580,7 +583,7 @@ console.log('in the change listener, season select');
 
       };
 
-
+        resultsObj=resultsData;
  
      }
 

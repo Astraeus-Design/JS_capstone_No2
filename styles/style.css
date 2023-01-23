@@ -364,3 +364,31 @@ body {
   box-shadow: inset 0px 0px 26px -4px rgba(0,0,0,0.9);
 }
 
+@media screen and ( max-width: 800px){
+
+  .results_container{
+    background-color: gainsboro;
+    display:flex;
+    flex-direction: column;
+    justify-content:flex-start;
+    width:100%;
+    opacity:95%; 
+    border-radius: 5px; 
+    /*max-height:200px;*/
+  }
+  
+  .hdr{
+
+  
+    display:flex;
+    flex-direction: column;
+    justify-content:flex-start;
+    align-items:center;
+    width:100%;
+    background-color: gainsboro;
+    border-radius: 10px;;
+    box-shadow: inset 0px 0px 26px -4px rgba(0,0,0,0.58);    
+    opacity:90%; 
+  }
+
+}
