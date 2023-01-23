@@ -459,7 +459,8 @@ let raceArray;
 let resultsArray;
 let resultsObj;
 let seasonsObj;
-
+let linksArray=[];
+let htmlArray=[];
 
 /* function to return country code via lookup for nationality/country  */
 /* used for generation of flag icons                           */
@@ -470,7 +471,7 @@ function getIconRef(searchStr,ctryflag){
     if(searchStr==='USA') searchStr='United States';
     countryObj='';
     if (!ctryflag){
-        countryObj = nationalities.find((element)=>(element.Nationality).toLowerCase()===searchStr);
+        countryObj = nationalities.find((element)=>(element.Nationality).toLowerCase()===(searchStr.toLowerCase()));
         if (countryObj!=='') ccode=countryObj.CountryCode;
     }
     else
@@ -529,7 +530,7 @@ console.log('in the change listener, season select');
 
       /* load race results data ready for presentation */
 
-      resultsObj=JSON.parse(localStorage.getItem(filename));
+      resultsObj=JSON.parse(localStorage.getItem(filename2));
 
     }
   else
@@ -621,6 +622,12 @@ function displayEvents(){
          cUrl=element.Circuit.url
          fname=getIconRef(ctry,true);
          path=`../images/png_files/w40/`;
+
+         /* maintain array of urls for div elements */
+         
+         idObj={id:cName,url:cUrl};
+         linksArray.push(idObj);
+
          /* create main header div block */
          
         d1=`<div class="hdr"><div class="hdrtitle"><h3 class="hdrh3">`+
@@ -629,25 +636,33 @@ function displayEvents(){
         d2=`<div class="hdrIcon"><img class="hdrimg" src="${(fname!=='---')?(path+fname):'---'}"/>`+
            `</div>`;
 
-        d3=`<div class="hdrPlace"><a class="hdrlink" target="_blank" href="${cUrl}">${cName}</a></div></div>`;
+/*        d3=`<div class="hdrPlace"><a class="hdrlink" target="_blank" href="${cUrl}">${cName}</a></div></div>`;*/
+
+        d3=`<div class="hdrPlace">${cName}</div></div>`;
 
 
 
         /* now define 3 divs containing results and driver data */
         /* forEach not practical for this task so simple loop */
 
-        resultsArray=resultsObj.MRData.RaceTable.Races;
+
 
         for( j=0; j<3;j++){
-            let htmlArray=[];
-            driverData=resultsArray[j].Driver;
+            
+            resultsArray=resultsObj.MRData.RaceTable.Races[j].Results[j];
+            driverData=resultsArray.Driver;
             driverUrl=driverData.url;
             driverName=driverData.familyName+` `+driverData.givenName;
             driverCtry=driverData.nationality;
-            teamData=resultsArray[j].Constructor;
+            teamData=resultsArray.Constructor;
             driverTeam=teamData.constructorId;
             teamCtry=teamData.nationality;
             teamUrl=teamData.url;
+
+            idObj={id:driverName,url:driverUrl};
+            linksArray.push(idObj);
+            idObj={id:driverTeam,url:teamUrl};
+            linksArray.push(idObj);
 
             /*create icons for driver and team */
 
@@ -659,9 +674,11 @@ function displayEvents(){
             firstdiv=`<div class="resultBody">`;
             seconddiv=`<div class="divtitle">1st</div>`;
             thirddiv=`<div class="flagdiv1"><img src="${(flag1!=='---')?(path+flag1):'---'}"/></div>`;
-            fourthdiv=`<div class="driverdiv"><a href="${driverUrl} target="_blank">${driverName}</a></div>`;
+            fourthdiv=`<div class="driverdiv">${driverName}</div>`;            
+/*            fourthdiv=`<div class="driverdiv"><a href="${driverUrl} target="_blank">${driverName}</a></div>`;*/
             fifthdiv=`<div class="flagdiv2"><img src="${(flag2!=='---')?(path+flag2):'---'}"/></div>`;
-            sixthdiv=`<div class="teamdiv"><a href="${teamUrl} target="_blank">${driverTeam}</a></div></div>`;
+            sixthdiv=`<div class="teamdiv">${driverTeam}</div></div>`;
+/*            sixthdiv=`<div class="teamdiv"><a href="${teamUrl} target="_blank">${driverTeam}</a></div></div>`;*/
 
             htmlArray[j]=firstdiv+seconddiv+thirddiv+fourthdiv+fifthdiv+sixthdiv;
             

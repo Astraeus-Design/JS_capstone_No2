@@ -198,10 +198,17 @@ body {
   
 }
 
-.headerPlace{
-    margin-left: auto;
+.hdrPlace{
+    font-size: 1.75rem;
+    font-weight: bold;
+    margin: 0 2rem;
+    padding:2rem;
+    
     text-align: center;
     width:30%;
+    box-shadow: inset 0px 0px 26px -4px rgba(0,0,0,0.58);    
+    opacity:95%; 
+    border-radius: 5px;    
 }
 
 
