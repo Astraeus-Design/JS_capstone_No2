@@ -138,7 +138,7 @@ body {
 
 .hdr{
 
-  /*max-height: 10vh;*/
+  
   display:flex;
   flex-direction: row;
   justify-content:flex-start;
@@ -179,7 +179,8 @@ body {
 .hdrimg{
   display:inline-block;
   width: 100%;
-  height:auto;
+  
+  max-height: 30%;
   /*margin-left: auto;*/
   margin:3px;
 }

@@ -456,6 +456,7 @@ let filename='';
 let filename2='';
 let inTimeOut=false;
 let raceArray;
+let resultsArray;
 let resultsObj;
 let seasonsObj;
 
@@ -630,15 +631,48 @@ function displayEvents(){
 
         d3=`<div class="hdrPlace"><a class="hdrlink" target="_blank" href="${cUrl}">${cName}</a></div></div>`;
 
-        headerhtml=`<div class="hdr_container">`+d1+d2+d3+`</div>`;
+
 
         /* now define 3 divs containing results and driver data */
+        /* forEach not practical for this task so simple loop */
+
+        resultsArray=resultsObj.MRData.RaceTable.Races;
+
+        for( j=0; j<3;j++){
+            let htmlArray=[];
+            driverData=resultsArray[j].Driver;
+            driverUrl=driverData.url;
+            driverName=driverData.familyName+` `+driverData.givenName;
+            driverCtry=driverData.nationality;
+            teamData=resultsArray[j].Constructor;
+            driverTeam=teamData.constructorId;
+            teamCtry=teamData.nationality;
+            teamUrl=teamData.url;
+
+            /*create icons for driver and team */
+
+            flag1=getIconRef(driverCtry,false);
+            flag2=getIconRef(teamCtry,false);
+
+            /* build html structure for each div */
+
+            firstdiv=`<div class="resultBody">`;
+            seconddiv=`<div class="divtitle">1st</div>`;
+            thirddiv=`<div class="flagdiv1"><img src="${(flag1!=='---')?(path+flag1):'---'}"/></div>`;
+            fourthdiv=`<div class="driverdiv"><a href="${driverUrl} target="_blank">${driverName}</a></div>`;
+            fifthdiv=`<div class="flagdiv2"><img src="${(flag2!=='---')?(path+flag2):'---'}"/></div>`;
+            sixthdiv=`<div class="teamdiv"><a href="${teamUrl} target="_blank">${driverTeam}</a></div></div>`;
+
+            htmlArray[j]=firstdiv+seconddiv+thirddiv+fourthdiv+fifthdiv+sixthdiv;
+            
+        };
+
+        /* consolidate all html sections into main container*/
 
 
-
-
-
-        htmlMaindiv+=headerhtml;
+        headerhtml=`<div class="hdr_container">`+d1+d2+d3+`</div>`;        
+        bodyhtml=`<div class="results_container">`+htmlArray[0]+htmlArray[1]+htmlArray[2]+'</div>';
+        htmlMaindiv+=(headerhtml+bodyhtml);
 
  /*        htmlHeader=`<div id="hdr"><div id="hdrtitle"><h3 id="hdrh3">`+
                 `Round ${index+1}:  ${element.Circuit.Location.country}`+
