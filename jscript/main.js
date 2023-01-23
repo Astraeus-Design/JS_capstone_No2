@@ -508,6 +508,51 @@ function populateRounds(dataObj){
 
 }
 
+/* function to set a div visible or not dependent on round select input */
+
+function toggleDivs(){
+
+/* noofDivs will represent number of divs displayable */
+/* if set to zero drop straight out of routine */
+
+if (noofDivs>0){
+
+   for( z=0; z<noofDivs; z++){  /* clear all divs to not displaying */
+       divId='#A'+z;
+       docref=document.querySelector(divId);
+       if (docref.classList.contains('display')){
+           docref.classList.remove('display'); 
+       };
+   };
+
+   /* if select set to All then set all divs visible */ 
+   if (roundRef.value==0){
+   for( z=0; z<noofDivs; z++){
+    divId='#A'+z;
+    docref=document.querySelector(divId);
+    if (!(docref.classList.contains('display'))){
+        docref.classList.add('display'); 
+     }
+    }
+   }
+   else
+   {
+     for( z=0; z<noofDivs; z++){
+      divId='#A'+z;
+      docref=document.querySelector(divId);
+      if (docref.classList.contains('display')){
+          docref.classList.remove('display'); 
+      }
+    }
+    document.querySelector('#A'+roundRef.value).classList.add('display');
+  }
+
+
+
+ }
+
+
+};
 
 /*  function to store F1 season data object arrays in local storage */
 
@@ -621,6 +666,7 @@ function displayEvents(){
   raceArray=seasonsObj.MRData.RaceTable.Races;
 
   htmlMaindiv=``;
+  noofDivs=0;
 
   raceArray.forEach((element,index)=>{
 
@@ -713,7 +759,9 @@ function displayEvents(){
                     console.log(element.Circuit.Location.country);
   });
 
+   /* set divs in appropriate state prior to rendering */
 
+   /*toggleDivs();*/
    displayDiv.innerHTML=htmlMaindiv;
 
   
@@ -755,6 +803,10 @@ cacheSeasonData();
 /* assign an event listener for season select input change */
 
 seasonRef.addEventListener('change',cacheSeasonData);
+
+/* add a change listener for round select to make divs visible */
+
+/* roundRef.addEventListener('change',toggleDivs);*/
 
 /* assign listener to button for submission this will also */
 /* be listener that creates dynamic html and determines data */

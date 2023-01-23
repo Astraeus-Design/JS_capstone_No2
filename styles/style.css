@@ -154,6 +154,7 @@ body {
   /*display:flex;
   flex-direction:column;
   justify-content:center;*/
+  /*display:none;*/
   width:80%;
   border-radius: 10px;
   background-color:gainsboro;
@@ -161,6 +162,10 @@ body {
   opacity:90%;  
   margin:15px 0 5px 0;
 }
+/*
+.display{
+  display:block;
+}*/
 
 .hdr{
 
